@@ -1,5 +1,6 @@
 package com.example.mydbutils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.mydbutils.domain.New;
@@ -59,13 +60,6 @@ public class MyTest extends AndroidTestCase {
 	 * 测试成功，不过方法字段比较麻烦
 	 */
 	public void testQueryBy(){
-		 List<New> list;
-		try {
-			list = dbUtils.queryByColumn(New.class, New.class.getDeclaredField("url"), "http://baidu.com");
-			Log.i(TAG, "查询:"+list);
-		} catch (NoSuchFieldException e) {
-			
-			e.printStackTrace();
-		}
+	New	 new1=dbUtils.queryByColumn(New.class, "url", "http://baidu.com");
 	}
 }
